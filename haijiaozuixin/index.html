@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海角最新地址-海角最新地址发布页_海角地址更新与访问入口</title>
+<meta name="description" content="海角最新地址发布页，汇总海角最新地址的常用访问入口与更新说明，提供地址识别要点、访问异常排查与备用通道提示，帮助访问者快速找到可用的海角最新地址。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e2b3f'/%3E%3Cpath d='M10 44c6-8 12-8 18-2s12 6 18-2' stroke='%234dd0e1' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='44' cy='20' r='6' fill='%23ffd166'/%3E%3C/svg%3E">
+<style>
+:root{
+  --deep:#0b2233;
+  --deep2:#123a52;
+  --ink:#132b3a;
+  --muted:#54707f;
+  --line:#d8e6ec;
+  --aqua:#1b9bb5;
+  --aqua-soft:#e7f5f8;
+  --sand:#f6f1e7;
+  --amber:#d98e2b;
+  --card:#ffffff;
+  --radius:16px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,-apple-system,sans-serif;
+  color:var(--ink);
+  background:#fbfcfd;
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--aqua);text-decoration:none;}
+a:hover{text-decoration:underline;}
+img,svg{max-width:100%;}
+.wrap{width:min(1120px,92vw);margin:0 auto;}
+
+/* ===== header ===== */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,34,51,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.bar{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding:12px 0;
+}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;letter-spacing:.3px;}
+.logo .mark{width:38px;height:38px;flex:0 0 38px;}
+.logo span.brand{font-size:17px;white-space:nowrap;}
+nav.main ul{
+  display:flex;gap:22px;list-style:none;margin:0;padding:0;flex-wrap:wrap;
+}
+nav.main a{color:#cfe3ec;font-size:14.5px;}
+nav.main a:hover{color:#fff;text-decoration:none;}
+.menu-btn{display:none;background:none;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:8px;padding:6px 10px;font-size:14px;}
+
+/* ===== hero ===== */
+.hero{
+  background:
+    radial-gradient(1100px 380px at 85% -10%, rgba(77,208,225,.22), transparent 60%),
+    linear-gradient(160deg,var(--deep) 0%,var(--deep2) 70%,#0f4c63 100%);
+  color:#fff;
+  padding:56px 0 64px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:-1px;height:56px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 56' preserveAspectRatio='none'%3E%3Cpath d='M0,30 C150,60 300,0 450,24 C600,48 750,6 900,26 C1050,46 1150,20 1200,28 L1200,56 L0,56 Z' fill='%23fbfcfd'/%3E%3C/svg%3E") no-repeat center bottom/100% 100%;
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;position:relative;z-index:2;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(77,208,225,.14);border:1px solid rgba(77,208,225,.4);
+  color:#9fe6f2;font-size:13px;padding:5px 12px;border-radius:999px;letter-spacing:.5px;
+}
+h1{
+  font-size:clamp(28px,4.4vw,44px);
+  line-height:1.25;margin:18px 0 14px;letter-spacing:.5px;font-weight:800;
+}
+.hero p.lead{color:#c9dde7;font-size:16.5px;margin:0 0 26px;max-width:36em;}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:10px;font-weight:600;font-size:15.5px;
+  border:1px solid transparent;transition:.18s;
+}
+.btn-primary{background:linear-gradient(135deg,#25b3c9,#1a8ca6);color:#fff;box-shadow:0 8px 22px rgba(37,179,201,.28);}
+.btn-primary:hover{text-decoration:none;transform:translateY(-1px);box-shadow:0 12px 26px rgba(37,179,201,.36);}
+.btn-ghost{border-color:rgba(255,255,255,.34);color:#e6f4f9;}
+.btn-ghost:hover{text-decoration:none;background:rgba(255,255,255,.08);}
+.cta-note{font-size:13px;color:#8fb2c2;margin-top:14px;}
+
+.hero-card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:var(--radius);
+  padding:20px 22px;
+  backdrop-filter:blur(4px);
+}
+.hero-card h2{font-size:14px;margin:0 0 12px;color:#9fe6f2;letter-spacing:1px;font-weight:600;}
+.hero-card ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;}
+.hero-card li{display:flex;gap:10px;font-size:14.5px;color:#d3e6ee;align-items:flex-start;}
+.dot{width:8px;height:8px;border-radius:50%;background:#4dd0e1;flex:0 0 8px;margin-top:8px;}
+
+/* ===== section commons ===== */
+section{padding:56px 0;}
+.sec-head{max-width:740px;margin-bottom:30px;}
+.sec-head .kicker{font-size:13px;letter-spacing:2px;color:var(--aqua);font-weight:700;margin-bottom:6px;}
+.sec-head h2{font-size:clamp(21px,2.6vw,27px);margin:0 0 10px;line-height:1.35;}
+.sec-head p{margin:0;color:var(--muted);font-size:15.5px;}
+
+/* address board */
+.board{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:0 10px 30px rgba(19,43,58,.05);
+  overflow:hidden;
+}
+.board-top{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding:16px 22px;background:var(--aqua-soft);border-bottom:1px solid var(--line);
+  flex-wrap:wrap;
+}
+.board-top strong{font-size:15px;color:var(--ink);}
+.board-top .status{font-size:13px;color:#1a7f57;display:inline-flex;align-items:center;gap:6px;}
+.status .pulse{width:8px;height:8px;border-radius:50%;background:#22b573;box-shadow:0 0 0 4px rgba(34,181,115,.16);}
+table{width:100%;border-collapse:collapse;font-size:14.5px;}
+th,td{text-align:left;padding:14px 22px;border-bottom:1px solid #edf3f6;}
+th{font-size:13px;color:var(--muted);font-weight:600;background:#fafdfe;letter-spacing:.5px;}
+td code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;background:#f2f8fa;padding:2px 8px;border-radius:6px;color:#136f84;word-break:break-all;}
+tr:last-child td{border-bottom:none;}
+.tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:999px;background:#e7f5f8;color:#157a92;border:1px solid #c6e7ee;}
+.tag.warn{background:#fdf3e3;color:#a86a12;border-color:#f0dcb8;}
+
+/* cards */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 22px;transition:.18s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(19,43,58,.08);border-color:#c3e0e9;}
+.card .ico{width:42px;height:42px;border-radius:11px;background:var(--aqua-soft);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.card h3{font-size:17px;margin:0 0 8px;}
+.card p{margin:0;font-size:14.6px;color:var(--muted);}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s;}
+.step{
+  position:relative;background:var(--sand);border-radius:var(--radius);
+  padding:26px 22px 22px;border:1px solid #ece2d0;
+}
+.step::before{
+  counter-increment:s;content:counter(s);
+  position:absolute;top:-14px;left:22px;
+  width:32px;height:32px;border-radius:9px;background:var(--amber);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;
+  box-shadow:0 6px 14px rgba(217,142,43,.28);
+}
+.step h3{margin:6px 0 8px;font-size:16.5px;}
+.step p{margin:0;font-size:14.4px;color:#6b5c44;}
+
+/* faq */
+.faq{display:grid;gap:14px;}
+details{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;
+}
+details[open]{border-color:#bfdde6;box-shadow:0 8px 22px rgba(19,43,58,.05);}
+summary{
+  cursor:pointer;font-weight:600;font-size:15.5px;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+summary::-webkit-details-marker{display:none;}
+summary::after{content:"+";color:var(--aqua);font-size:20px;font-weight:400;line-height:1;}
+details[open] summary::after{content:"–";}
+details p{margin:12px 0 0;font-size:14.6px;color:var(--muted);}
+
+/* about + download */
+.about-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:36px;align-items:start;}
+.about-grid p{font-size:15.4px;color:#33505f;margin:0 0 14px;}
+.dl-card{
+  background:linear-gradient(165deg,#0f3346,#124a60);color:#e7f5f9;
+  border-radius:var(--radius);padding:26px 24px;border:1px solid rgba(255,255,255,.1);
+}
+.dl-card h3{margin:0 0 8px;font-size:17px;color:#fff;}
+.dl-card p{margin:0 0 18px;font-size:14px;color:#a9c8d5;}
+.btn-dl{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);
+  color:#fff;padding:12px 18px;border-radius:10px;font-weight:600;font-size:15px;
+  pointer-events:none;opacity:.85;text-decoration:none;
+}
+.dl-note{font-size:12.5px;color:#8fb2c2;margin-top:12px;}
+
+/* footer */
+footer.site{
+  background:var(--deep);color:#a9c3cf;padding:36px 0 26px;margin-top:20px;
+}
+.foot-top{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:20px;margin-bottom:18px;}
+.foot-top .logo span.brand{font-size:15.5px;}
+.foot-nav{display:flex;gap:20px;flex-wrap:wrap;font-size:14px;}
+.foot-nav a{color:#b9d2dc;}
+.foot-nav a:hover{color:#fff;}
+.copy{font-size:13px;color:#7f9dab;line-height:1.7;}
+.copy a{color:#9fe6f2;}
+
+/* responsive */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:30px;}
+  .grid3,.steps{grid-template-columns:1fr 1fr;}
+  .about-grid{grid-template-columns:1fr;}
+}
+@media (max-width:720px){
+  nav.main{display:none;position:absolute;top:100%;left:0;right:0;background:var(--deep);padding:10px 0 16px;border-bottom:1px solid rgba(255,255,255,.12);}
+  nav.main.open{display:block;}
+  nav.main ul{flex-direction:column;gap:0;padding:0 6vw;}
+  nav.main a{display:block;padding:11px 0;font-size:15px;border-bottom:1px solid rgba(255,255,255,.07);}
+  .menu-btn{display:inline-block;}
+  .bar{position:relative;}
+  section{padding:42px 0;}
+  .hero{padding:40px 0 54px;}
+  .grid3,.steps{grid-template-columns:1fr;}
+  th,td{padding:12px 14px;font-size:13.6px;}
+  .board-top{padding:14px 16px;}
+  .btn{padding:11px 18px;font-size:15px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="海角最新地址 首页">
+      <svg class="mark" viewBox="0 0 64 64" role="img" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#12455c"/>
+        <path d="M8 44c7-9 13-9 19-2.5S39 47.5 46 40" stroke="#4dd0e1" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+        <path d="M8 33c7-9 13-9 19-2.5S39 36.5 46 29" stroke="#2f9fb8" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <circle cx="46" cy="19" r="6" fill="#ffd166"/>
+      </svg>
+      <span class="brand">海角最新地址</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">菜单</button>
+    <nav class="main" id="mainNav" aria-label="主导航">
+      <ul>
+        <li><a href="#address">地址发布</a></li>
+        <li><a href="#access">访问须知</a></li>
+        <li><a href="#steps">识别步骤</a></li>
+        <li><a href="#faq">常见问题</a></li>
+        <li><a href="#about">关于本页</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">地址发布 · 入口提示</span>
+        <h1>海角最新地址</h1>
+        <p class="lead">本页用于集中说明海角最新地址的获取方式与访问入口，整理地址变动时的判断要点，并给出访问异常时的排查顺序。所有内容以发布页信息为准，不承诺固定域名长期有效。</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#address">查看地址发布区
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#steps">地址识别步骤</a>
+        </div>
+        <p class="cta-note">地址可能随发布页调整，请以本页与官方发布页的同步信息为判断依据。</p>
+      </div>
+
+      <aside class="hero-card" aria-label="访问前提示">
+        <h2>访问前先确认</h2>
+        <ul>
+          <li><span class="dot"></span><span>核对域名是否来自发布页公布的完整字符串，避免凭记忆输入。</span></li>
+          <li><span class="dot"></span><span>打开前确认浏览器地址栏无多余前缀或拼写替换。</span></li>
+          <li><span class="dot"></span><span>若页面提示证书异常，先停止输入任何账号信息。</span></li>
+          <li><span class="dot"></span><span>保存发布页本身，比保存单个地址更稳妥。</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section id="address">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">ADDRESS BOARD</div>
+        <h2>海角最新地址发布区</h2>
+        <p>下表用于说明地址发布页通常呈现的信息结构：线路编号、地址形态、状态与更新时间。具体可用的海角最新地址以发布页当次公布为准，本页不代填真实域名。</p>
+      </div>
+
+      <div class="board">
+        <div class="board-top">
+          <strong>线路信息结构示例</strong>
+          <span class="status"><span class="pulse"></span>以发布页公布为准</span>
+        </div>
+        <table>
+          <thead>
+            <tr><th scope="col">线路</th><th scope="col">地址形态</th><th scope="col">状态</th><th scope="col">更新说明</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>主线路</td>
+              <td><code>https://主域名/</code></td>
+              <td><span class="tag">优先使用</span></td>
+              <td>发布页首次公布的完整地址</td>
+            </tr>
+            <tr>
+              <td>备用线路</td>
+              <td><code>https://备用域名/</code></td>
+              <td><span class="tag">可切换</span></td>
+              <td>主线路异常时按发布页顺序尝试</td>
+            </tr>
+            <tr>
+              <td>镜像提示</td>
+              <td><code>发布页内页链接</code></td>
+              <td><span class="tag warn">需核对</span></td>
+              <td>仅认发布页原文，不认转述版本</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="access" style="background:#f4fafc;">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">ACCESS NOTES</div>
+        <h2>访问海角最新地址时值得留意的三件事</h2>
+        <p>地址本身只是入口，能否顺畅访问还取决于来源可信度、设备环境与操作习惯。以下三点覆盖了最常见的判断场景。</p>
+      </div>
+      <div class="grid3">
+        <article class="card">
+          <div class="ico">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v6c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9V6l7-3z" stroke="#1b9bb5" stroke-width="1.9" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#1b9bb5" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>来源优先</h3>
+          <p>海角最新地址应取自发布页原文。二手截图、群聊转述、短链跳转都可能被替换字符，核对时逐位比对，不依赖记忆。</p>
+        </article>
+        <article class="card">
+          <div class="ico">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2" stroke="#1b9bb5" stroke-width="1.9"/><path d="M8 21h8M12 17v4" stroke="#1b9bb5" stroke-width="1.9" stroke-linecap="round"/></svg>
+          </div>
+          <h3>环境检查</h3>
+          <p>打不开时先区分是地址失效还是本地网络问题：换网络、换浏览器、清缓存三项依次尝试，能快速排除大部分误判。</p>
+        </article>
+        <article class="card">
+          <div class="ico">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#1b9bb5" stroke-width="1.9"/><path d="M12 7v5l3 2" stroke="#1b9bb5" stroke-width="1.9" stroke-linecap="round"/></svg>
+          </div>
+          <h3>节奏合理</h3>
+          <p>地址变动通常伴随发布页更新说明。看到“最新”字样时，留意其标注的更新时间，避免使用超出时效的旧地址。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="steps">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">HOW TO CHECK</div>
+        <h2>获取海角最新地址的三个步骤</h2>
+        <p>把“找地址”拆成可重复执行的流程，比每次临时搜索更可靠，也能减少误入仿冒页面的概率。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>先回到发布页</h3>
+          <p>从已保存的发布页入口进入，而不是从搜索引擎结果直接点开。发布页是地址的第一来源，其他渠道只作交叉验证。</p>
+        </div>
+        <div class="step">
+          <h3>逐位核对字符串</h3>
+          <p>对照发布页公布的完整地址检查协议、域名与路径，不省略、不补全、不猜测。发现字符差异即视为新地址，重新核对。</p>
+        </div>
+        <div class="step">
+          <h3>失败后按顺序切换</h3>
+          <p>主线路不可用时，按发布页给出的备用顺序尝试，并记录哪一条可用，下次访问可直接从可用线路进入。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="background:#f4fafc;">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">FAQ</div>
+        <h2>关于海角最新地址的常见问题</h2>
+        <p>以下回答围绕地址获取与访问判断展开，不涉及具体域名，实际结果以发布页当次信息为准。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>为什么海角最新地址会变化？</summary>
+          <p>地址调整通常与发布页的线路维护有关。发布页会以更新说明的方式体现变更，访问者只需跟随发布页公布的内容，不必追查变更原因。</p>
+        </details>
+        <details>
+          <summary>收藏单个地址够用吗？</summary>
+          <p>不够稳妥。单个地址一旦失效就失去入口，而收藏发布页本身可以持续获得后续公布的地址。建议同时保存发布页与最近一次可用的线路。</p>
+        </details>
+        <details>
+          <summary>搜索结果里的地址可以直接用吗？</summary>
+          <p>需要谨慎。搜索结果与短链可能指向非发布页公布的地址，字符近似但并非同一目标。判断标准始终是能否与发布页原文逐位一致。</p>
+        </details>
+        <details>
+          <summary>页面能打开但内容异常怎么办？</summary>
+          <p>先停止在该页面输入任何信息，回到发布页复核地址是否一致；确认一致后再排查本地缓存与网络环境，避免把加载问题误当成地址问题。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div>
+          <div class="sec-head" style="margin-bottom:18px;">
+            <div class="kicker">ABOUT THIS PAGE</div>
+            <h2>本页的定位与使用方式</h2>
+          </div>
+          <p>本页是一个围绕海角最新地址的说明型入口页，作用是把地址获取的判断标准、访问排查顺序与常见疑问集中呈现，方便访问者在一次阅读中完成核对与操作。</p>
+          <p>页面不代填、不代发真实域名，也不对任何线路的长期可用性作出承诺。表格中的地址形态属于信息结构示例，用于说明发布页通常公布哪些字段，实际使用时请以发布页当次内容替换。</p>
+          <p>如果你只是需要一个稳定的查找习惯：先存发布页，再存最近可用线路，遇到变化时回到发布页复核。这个顺序适用于大多数地址更新的场景，也能减少因字符误记导致的访问失败。</p>
+        </div>
+        <aside class="dl-card">
+          <h3>页面资料下载</h3>
+          <p>整理后的地址核对清单与排查顺序说明，便于离线保存。</p>
+          <a class="btn-dl" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v10M7 10l5 5 5-5M5 19h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            下载
+          </a>
+          <p class="dl-note">下载入口将在资料就绪后开放，当前以页面阅读为主。</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="logo" href="#top" aria-label="海角最新地址 返回顶部">
+        <svg class="mark" viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#123a52"/>
+          <path d="M8 44c7-9 13-9 19-2.5S39 47.5 46 40" stroke="#4dd0e1" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+          <path d="M8 33c7-9 13-9 19-2.5S39 36.5 46 29" stroke="#2f9fb8" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <circle cx="46" cy="19" r="6" fill="#ffd166"/>
+        </svg>
+        <span class="brand">海角最新地址</span>
+      </a>
+      <nav class="foot-nav" aria-label="页尾导航">
+        <a href="#address">地址发布</a>
+        <a href="#access">访问须知</a>
+        <a href="#steps">识别步骤</a>
+        <a href="#faq">常见问题</a>
+        <a href="#about">关于本页</a>
+      </nav>
+    </div>
+    <p class="copy">海角最新地址说明页 · 地址信息以发布页当次公布为准，本页不对长期可用性作出承诺。访问前请核对完整字符串，谨慎处理账号相关信息。</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menuBtn');
+  var nav=document.getElementById('mainNav');
+  if(!btn||!nav)return;
+  btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName==='A'&&window.innerWidth<=720){
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
+</body>
+</html>
