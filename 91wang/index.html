@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>91网-91网官网入口_91网首页访问与内容导航</title>
+<meta name="description" content="91网首页导航，汇总站点入口、内容分区与常见访问问题，帮助访客快速找到91网首页入口并了解页面内容组织与使用方式。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1b2a'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%2337c2a8' stroke-width='3'/%3E%3Cpath d='M24 22v20M40 22v20M24 32h16' stroke='%2337c2a8' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#0e1c29;
+    --ink-soft:#40566a;
+    --line:#dde5ec;
+    --bg:#f6f9fb;
+    --card:#ffffff;
+    --brand:#0e3a53;
+    --accent:#1f9c86;
+    --accent-soft:#e3f5f1;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.75;
+    font-size:16px;
+  }
+  a{color:var(--brand);text-decoration:none;}
+  a:hover{color:var(--accent);}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px;}
+
+  /* Header */
+  header.site{
+    background:var(--card);
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:20;
+  }
+  .head-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;padding:14px 0;flex-wrap:wrap;
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--brand);letter-spacing:.5px;}
+  .logo svg{flex:none;}
+  nav.main{display:flex;gap:22px;flex-wrap:wrap;font-size:15px;}
+  nav.main a{color:var(--ink-soft);}
+  nav.main a:hover{color:var(--accent);}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,#0e3a53 0%,#12566f 55%,#157a78 100%);
+    color:#eaf6f5;
+    padding:56px 0 52px;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.35fr .9fr;gap:40px;align-items:center;
+  }
+  .kicker{
+    display:inline-block;font-size:13px;letter-spacing:2px;
+    background:rgba(255,255,255,.14);color:#d6f2ee;
+    padding:4px 12px;border-radius:999px;margin-bottom:16px;
+  }
+  h1{
+    font-size:38px;line-height:1.25;margin:0 0 14px;
+    letter-spacing:1px;color:#ffffff;
+  }
+  .hero p.lead{
+    margin:0 0 22px;font-size:16.5px;color:#d3e8e7;max-width:34em;
+  }
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:11px 22px;border-radius:10px;
+    font-size:15px;font-weight:600;transition:.2s;
+  }
+  .btn-solid{background:#37c2a8;color:#06231f;}
+  .btn-solid:hover{background:#4ed4bb;color:#06231f;}
+  .btn-ghost{border:1px solid rgba(255,255,255,.45);color:#eaf6f5;}
+  .btn-ghost:hover{border-color:#fff;color:#fff;}
+  .hero-art{display:flex;justify-content:center;}
+  .hero-art svg{width:100%;max-width:280px;height:auto;}
+
+  /* Sections */
+  section{padding:52px 0;}
+  section + section{border-top:1px solid var(--line);}
+  .sec-head{margin-bottom:26px;}
+  .sec-head h2{
+    font-size:24px;margin:0 0 8px;color:var(--brand);letter-spacing:.5px;
+  }
+  .sec-head p{margin:0;color:var(--ink-soft);font-size:15px;}
+
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 22px 20px;
+  }
+  .card h3{margin:0 0 8px;font-size:17px;color:var(--brand);}
+  .card p{margin:0;font-size:14.5px;color:var(--ink-soft);}
+  .ico{
+    width:38px;height:38px;border-radius:10px;background:var(--accent-soft);
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+  }
+  .ico svg{width:20px;height:20px;}
+
+  /* Flow list */
+  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:step;}
+  .flow .step{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px;
+  }
+  .flow .step::before{
+    counter-increment:step;content:"0" counter(step);
+    display:block;font-size:13px;font-weight:700;color:var(--accent);
+    letter-spacing:1px;margin-bottom:8px;
+  }
+  .flow .step strong{display:block;font-size:15.5px;margin-bottom:6px;color:var(--ink);}
+  .flow .step span{font-size:14px;color:var(--ink-soft);}
+
+  /* Search panel */
+  .panel{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;
+  }
+  .panel label{display:block;font-size:14px;color:var(--ink-soft);margin-bottom:8px;}
+  .search-row{display:flex;gap:10px;flex-wrap:wrap;}
+  .search-row input{
+    flex:1 1 240px;min-width:0;padding:11px 14px;border:1px solid var(--line);
+    border-radius:10px;font-size:15px;font-family:inherit;color:var(--ink);
+    background:#fbfdfe;
+  }
+  .search-row input:focus{outline:2px solid var(--accent-soft);border-color:var(--accent);}
+  .search-row button{
+    padding:11px 22px;border:none;border-radius:10px;background:var(--brand);
+    color:#fff;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;
+  }
+  .search-row button:hover{background:#14506e;}
+  #searchResult{margin:14px 0 0;font-size:14.5px;color:var(--ink-soft);}
+  #searchResult strong{color:var(--brand);}
+
+  /* FAQ */
+  details{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:14px 18px;margin-bottom:12px;
+  }
+  details summary{
+    cursor:pointer;font-weight:600;font-size:15.5px;color:var(--brand);
+    list-style:none;
+  }
+  details summary::-webkit-details-marker{display:none;}
+  details summary::after{content:"＋";float:right;color:var(--accent);font-weight:700;}
+  details[open] summary::after{content:"－";}
+  details p{margin:10px 0 0;font-size:14.5px;color:var(--ink-soft);}
+
+  /* Download */
+  .dl-box{
+    display:flex;align-items:center;justify-content:space-between;gap:20px;
+    background:var(--accent-soft);border:1px solid #c6e9e2;border-radius:var(--radius);
+    padding:22px 24px;flex-wrap:wrap;
+  }
+  .dl-box .txt strong{display:block;font-size:17px;color:var(--brand);margin-bottom:4px;}
+  .dl-box .txt span{font-size:14px;color:var(--ink-soft);}
+  .btn-dl{
+    display:inline-block;padding:11px 28px;border-radius:10px;
+    background:var(--brand);color:#fff;font-weight:600;font-size:15px;
+    pointer-events:none;
+  }
+
+  footer.site{
+    background:var(--brand);color:#c9ddda;padding:34px 0 26px;font-size:14px;
+  }
+  footer.site .foot-top{
+    display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
+    padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.15);
+  }
+  footer.site a{color:#d9eeeb;}
+  footer.site a:hover{color:#fff;}
+  footer.site .foot-links{display:flex;gap:20px;flex-wrap:wrap;}
+  footer.site .copy{padding-top:16px;font-size:13px;color:#9fbdb9;}
+
+  @media (max-width:880px){
+    .hero-grid{grid-template-columns:1fr;gap:28px;}
+    .hero-art{order:-1;max-width:200px;}
+    .grid-3,.grid-2{grid-template-columns:1fr;}
+    .flow{grid-template-columns:repeat(2,1fr);}
+    h1{font-size:30px;}
+    section{padding:40px 0;}
+  }
+  @media (max-width:520px){
+    body{font-size:15.5px;}
+    .flow{grid-template-columns:1fr;}
+    .head-inner{padding:12px 0;}
+    nav.main{gap:14px;font-size:14px;}
+    h1{font-size:26px;}
+    .hero{padding:40px 0;}
+    .btn{padding:10px 18px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap head-inner">
+    <div class="logo">
+      <svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#0e3a53"/>
+        <circle cx="32" cy="32" r="17" fill="none" stroke="#37c2a8" stroke-width="3"/>
+        <path d="M24 22v20M40 22v20M24 32h16" stroke="#37c2a8" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <span>91网</span>
+    </div>
+    <nav class="main" aria-label="主导航">
+      <a href="#intro">站点概况</a>
+      <a href="#sections">内容分区</a>
+      <a href="#howto">使用路径</a>
+      <a href="#search">站内查找</a>
+      <a href="#faq">常见问题</a>
+      <a href="#download">下载</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker">首页导航 · 内容入口</span>
+      <h1>91网</h1>
+      <p class="lead">91网首页把站点入口、内容分区与访问说明集中在一处。无论你是首次访问，还是想快速回到常用栏目，都可以从下方入口进入对应区域，再按需深入浏览。</p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="#sections">查看内容分区</a>
+        <a class="btn btn-ghost" href="#search">站内查找</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="26" width="200" height="132" rx="12" fill="#0a2b3d" stroke="#37c2a8" stroke-width="2"/>
+        <line x1="20" y1="54" x2="220" y2="54" stroke="#37c2a8" stroke-width="1.5" opacity=".6"/>
+        <circle cx="36" cy="40" r="4" fill="#37c2a8"/>
+        <circle cx="50" cy="40" r="4" fill="#2a8f9c"/>
+        <circle cx="64" cy="40" r="4" fill="#1e6f7d"/>
+        <rect x="40" y="70" width="76" height="9" rx="4.5" fill="#37c2a8" opacity=".9"/>
+        <rect x="40" y="88" width="120" height="7" rx="3.5" fill="#9fd8d0" opacity=".55"/>
+        <rect x="40" y="104" width="96" height="7" rx="3.5" fill="#9fd8d0" opacity=".4"/>
+        <rect x="40" y="124" width="56" height="18" rx="9" fill="#37c2a8" opacity=".85"/>
+        <rect x="150" y="70" width="52" height="40" rx="8" fill="none" stroke="#37c2a8" stroke-width="1.5" opacity=".7"/>
+        <path d="M150 96l16-14 12 11 8-7 16 18" fill="none" stroke="#37c2a8" stroke-width="1.5" opacity=".7"/>
+        <circle cx="120" cy="176" r="6" fill="#37c2a8" opacity=".8"/>
+        <circle cx="150" cy="176" r="6" fill="#37c2a8" opacity=".5"/>
+        <circle cx="90" cy="176" r="6" fill="#37c2a8" opacity=".5"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <section id="intro">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>91网首页概况</h2>
+        <p>先了解页面承担什么，再决定从哪里进入。</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>一个集中的访问起点</h3>
+          <p>91网首页的作用是减少寻找成本：把常用栏目、站内查找与说明文字放在同一页面，访客不必在多个地址之间来回切换。页面结构按“概况—分区—路径—问答”的顺序展开。</p>
+        </div>
+        <div class="card">
+          <h3>面向不同熟悉程度</h3>
+          <p>第一次接触91网的访客可以从分区卡片建立整体印象；已有使用习惯的访客则可直接跳到站内查找或下载区域，用更短路径完成操作。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sections">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>内容分区</h2>
+        <p>91网首页各分区承担不同的信息任务，互不重复。</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1f9c86" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/></svg>
+          </div>
+          <h3>站点概况</h3>
+          <p>说明91网首页的定位与页面组织方式，帮助访客判断当前页面是否是自己要找的入口。</p>
+        </div>
+        <div class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1f9c86" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h7v14H4zM13 5h7v14h-7z"/></svg>
+          </div>
+          <h3>栏目导航</h3>
+          <p>把主要栏目以卡片形式列出，每个卡片对应一个方向，点击页头导航可直接定位到相应区域。</p>
+        </div>
+        <div class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1f9c86" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          </div>
+          <h3>站内查找</h3>
+          <p>输入关键词即可在本页栏目与说明中筛选匹配内容，结果实时显示，无需跳转。</p>
+        </div>
+        <div class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1f9c86" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 10l7-7 7 7"/></svg>
+          </div>
+          <h3>使用路径</h3>
+          <p>用四个步骤描述从进入91网首页到找到目标内容的常见顺序，适合新访客按图索骥。</p>
+        </div>
+        <div class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1f9c86" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7"/><path d="M12 17h.01"/></svg>
+          </div>
+          <h3>常见问题</h3>
+          <p>汇总访问入口、页面更新与内容范围相关的常见疑问，答案以可确认的信息为限。</p>
+        </div>
+        <div class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1f9c86" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M8 11l4 4 4-4"/><path d="M5 19h14"/></svg>
+          </div>
+          <h3>下载区</h3>
+          <p>提供91网相关文件的下载入口位置，当前按钮处于预留状态，待正式地址替换后即可使用。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="howto">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>从91网首页出发的四步路径</h2>
+        <p>按顺序操作，通常能在最短时间内找到目标内容。</p>
+      </div>
+      <div class="flow">
+        <div class="step"><strong>确认入口</strong><span>先确认所在页面为91网首页，避免通过来历不明的跳转地址进入。</span></div>
+        <div class="step"><strong>浏览分区</strong><span>浏览内容分区卡片，判断目标内容大致属于哪个方向。</span></div>
+        <div class="step"><strong>站内查找</strong><span>若栏目较多，直接用站内查找输入关键词缩小范围。</span></div>
+        <div class="step"><strong>按需下载</strong><span>需要文件时前往下载区；按钮未启用则说明地址仍在准备。</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="search">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>站内查找</h2>
+        <p>在91网首页现有栏目与说明文字中检索，结果即时呈现。</p>
+      </div>
+      <div class="panel">
+        <label for="q">输入关键词，例如“下载”“分区”“入口”“问题”</label>
+        <div class="search-row">
+          <input id="q" type="search" placeholder="输入要查找的内容关键词" autocomplete="off">
+          <button id="qBtn" type="button">查找</button>
+        </div>
+        <p id="searchResult" role="status" aria-live="polite">尚未输入关键词。可尝试“下载”“分区”“入口”“常见问题”等词。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>常见问题</h2>
+        <p>围绕91网首页访问与内容组织的常见疑问。</p>
+      </div>
+      <details>
+        <summary>91网首页主要提供什么？</summary>
+        <p>提供站点概况、内容分区导航、使用路径说明、站内查找与常见问题，是一处集中的访问起点。</p>
+      </details>
+      <details>
+        <summary>找不到某个栏目怎么办？</summary>
+        <p>可在站内查找中输入栏目相关词，页面会在现有栏目与说明中筛选匹配项；若仍无结果，说明该栏目未在本页列出。</p>
+      </details>
+      <details>
+        <summary>下载按钮为什么不能点击？</summary>
+        <p>下载入口目前处于预留状态，按钮暂不可用。待正式文件地址确定后，该入口会替换为可用链接。</p>
+      </details>
+      <details>
+        <summary>页面内容会变化吗？</summary>
+        <p>栏目与说明文字可能随内容组织调整而更新，具体以当前页面显示为准。</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="download">
+    <div class="wrap">
+      <div class="dl-box">
+        <div class="txt">
+          <strong>91网首页资料下载</strong>
+          <span>下载入口已预留，正式地址替换后即可获取文件。</span>
+        </div>
+        <a class="btn-dl" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <strong style="color:#fff;font-size:16px;">91网</strong><br>
+        首页导航与内容入口
+      </div>
+      <div class="foot-links">
+        <a href="#intro">站点概况</a>
+        <a href="#sections">内容分区</a>
+        <a href="#howto">使用路径</a>
+        <a href="#search">站内查找</a>
+        <a href="#faq">常见问题</a>
+        <a href="#download">下载</a>
+      </div>
+    </div>
+    <div class="copy">91网首页 · 页面内容以当前展示为准</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items = [
+    {t:"站点概况", k:"站点概况 首页 定位 页面组织 91网", a:"#intro"},
+    {t:"内容分区", k:"内容分区 栏目 导航 卡片 91网", a:"#sections"},
+    {t:"栏目导航", k:"栏目导航 页头 定位 91网", a:"#sections"},
+    {t:"站内查找", k:"站内查找 搜索 关键词 筛选 91网", a:"#search"},
+    {t:"使用路径", k:"使用路径 步骤 新访客 91网", a:"#howto"},
+    {t:"常见问题", k:"常见问题 入口 更新 内容范围 91网", a:"#faq"},
+    {t:"下载区", k:"下载区 下载 文件 预留 91网", a:"#download"},
+    {t:"访问入口", k:"入口 访问 91网 首页", a:"#intro"},
+    {t:"页面更新", k:"更新 内容 调整 91网", a:"#faq"}
+  ];
+  var input = document.getElementById('q');
+  var btn = document.getElementById('qBtn');
+  var out = document.getElementById('searchResult');
+
+  function run(){
+    var v = (input.value || '').trim().toLowerCase();
+    if(!v){
+      out.textContent = '尚未输入关键词。可尝试“下载”“分区”“入口”“常见问题”等词。';
+      return;
+    }
+    var hits = items.filter(function(it){
+      return it.t.toLowerCase().indexOf(v) > -1 || it.k.toLowerCase().indexOf(v) > -1;
+    });
+    if(!hits.length){
+      out.textContent = '未在91网首页现有栏目中找到“' + input.value + '”，可换用更短的词再试。';
+      return;
+    }
+    var links = hits.map(function(it){
+      return '<a href="' + it.a + '">' + it.t + '</a>';
+    }).join('、');
+    out.innerHTML = '找到 <strong>' + hits.length + '</strong> 个相关分区：' + links;
+  }
+
+  btn.addEventListener('click', run);
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); run(); }
+  });
+})();
+</script>
+
+</body>
+</html>
